@@ -1,18 +1,20 @@
-## -*- coding: utf-8 -*-
-<%inherit file="post.tmpl"/>
-<%namespace name="helper" file="post_helper.tmpl"/>
+{#  -*- coding: utf-8 -*- #}
+{% import 'post_helper.tmpl' as helper with context %}
+{% import 'post_header.tmpl' as pheader with context %}
+{% import 'comments_helper.tmpl' as comments with context %}
+{% extends 'base.tmpl' %}
 
-<%block name="extra_head">
-    ${parent.extra_head()}
-    ${helper.open_graph_metadata(post)}
-    ${helper.twitter_card_information(post)}
-</%block>
+{% block extra_head %}
+    {{ super() }}
+    {{ helper.open_graph_metadata(post) }}
+    {{ helper.twitter_card_information(post) }}
+    {{ helper.meta_translations(post) }}
+{% endblock %}
 
-
-<%block name="content">
-<article class="storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
-    <div itemprop="articleBody text">
-    ${post.text()}
+{% block content %}
+<article class="post-{{ post.meta('type') }} h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div class="e-content entry-content" itemprop="articleBody text">
+    {{ post.text() }}
     </div>
 </article>
-</%block>
+{% endblock %}
