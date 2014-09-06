@@ -21,21 +21,46 @@
 
 {{ base.late_load_js() }}
     <script>
-        $(document).ready(function() {
-            $('#calendar').fullCalendar({
-                // Foster work calendar
-                events: 'https://www.google.com/calendar/feeds/jo135s8fnku1ugoml22688q9d4%40group.calendar.google.com/public/basic',
-                eventClick: function(event) {
-                    // opens events in a popup window
-                    window.open(event.url, 'gcalevent', 'width=700,height=600');
-                    return false;
-                },
-                loading: function(bool) {
-                    $('#loading').toggle(bool);
-                }
-            });
-        });
-    </script>
+
+    $(document).ready(function() {
+
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+  
+        $('#calendar').fullCalendar({
+
+      theme: true,
+      weekends: false,
+      header: {
+         left: 'prev,next today',
+         center: 'title',
+         right: 'month,agendaWeek,agendaDay'
+     },
+  
+ 	    // Wanda's Shared Calendar
+            // THIS NEEDS TO BE https AND NOT JUST http!
+        events: 'https://www.google.com/calendar/feeds/jo135s8fnku1ugoml22688q9d4%40group.calendar.google.com/public/basic',
+  
+ 	        eventClick: function(event) {
+
+ 		    // opens events in a popup window
+ 		    window.open(event.url, 'gcalevent', 'width=400,height=400');
+ 		    return false;
+ 		    },
+  
+ 		    loading: function(bool) {
+ 		        if (bool) {
+ 			    $('#loading').show();
+  }else{
+  $('#loading').hide();
+  }
+ 		    } 
+  }); 
+    });
+
+</script>
     {% block extra_js %}{% endblock %}
     {% if annotations and post and not post.meta('noannotations') %}
         {{ notes.code() }}

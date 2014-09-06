@@ -25,14 +25,12 @@ table {
     table tr th :last-child, table tr td :last-child {
       margin-bottom: 0; }
 
-#loading {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+#calendar {
+        width: 100%;
+        margin: 0 auto;
 }
 
-#calendar {
-    max-width: 900px;
-    margin: 0 auto;
+#responsive-wrapper {
+        width:100%;
+        margin 0 auto;
 }
