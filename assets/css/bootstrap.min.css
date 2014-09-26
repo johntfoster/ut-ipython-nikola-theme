@@ -1767,7 +1767,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn{height:auto}
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus{color:#fff;background-color:transparent}
 .navbar-inverse .navbar-brand:focus{color:#fff;background-color:transparent}
-.navbar-inverse .navbar-brand #logo {height: 40px;}
+.navbar-inverse .navbar-brand #logo {height: 40px; padding-bottom: 4px}
 .navbar-inverse .navbar-text{color:#999}
 .navbar-inverse .navbar-nav>li>a{color:#FFFFFF}
 .navbar-inverse .navbar-nav>li>a:hover{text-decoration:underline;color:#FFF;background-color:#9C4700}
