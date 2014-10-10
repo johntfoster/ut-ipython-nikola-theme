@@ -125,7 +125,9 @@ body{
     font-size:14px;
     line-height:1.42857143;
     color:#666E75;
-    background-color:#fff}
+    background-color:#fff
+    text-align: justify;
+}
 input,
 button,
 select,
