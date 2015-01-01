@@ -77,11 +77,11 @@ lang="{{ lang }}">
             <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/gcal.js"></script>
         {% else %}
+            <script src="/assets/js/bootstrap.min.js"></script>
             <script src="/assets/js/moment.min.js"></script>
             <script src="/assets/js/jquery.min.js"></script>
-            <script src="/assets/js/jquery-ui.min.js"></script>
-            <script src="/assets/js/bootstrap.min.js"></script>
             <script src="/assets/js/fullcalendar.min.js"></script>
+            <script src="/assets/js/jquery-ui.min.js"></script>
             <script src="/assets/js/gcal.js"></script>
         {% endif %}
         <script src="/assets/js/jquery.colorbox-min.js"></script>
@@ -105,11 +105,9 @@ lang="{{ lang }}">
         {% if use_cdn %}
             <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
             <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.min.css" rel="stylesheet">
-            <link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.5/fullcalendar.print.css" rel="stylesheet">
         {% else %}
             <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
             <link href="/assets/css/fullcalendar.min.css" rel="stylesheet" type="text/css">
-            <link href="/assets/css/fullcalendar.print.css" rel="stylesheet" type="text/css">
             <link href="/assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
         {% endif %}
         <link href="/assets/css/rst.css" rel="stylesheet" type="text/css">
