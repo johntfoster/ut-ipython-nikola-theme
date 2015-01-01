@@ -24,28 +24,25 @@
 
     $(document).ready(function() {
 
-//        var date = new Date();
-//        var d = date.getDate();
-//        var m = date.getMonth();
-//        var y = date.getFullYear();
-  
         $('#calendar').fullCalendar({
 
-//            theme: true,
-//            weekends: false,
-//            header: {
-//                left: 'prev,next today',
-//                center: 'title',
-//                right: 'month,agendaWeek,agendaDay'
-//            },
-  
-//            googleCalendarApiKey: 'AIzaSyB68ZmmL0y2y9zfgCicaVC8uBGMDwki2pca',
-//            events: {
-//                googleCalendarId: 'jo135s8fnku1ugoml22688q9d4@group.calendar.google.com'
-//            }
-            // US Holidays
-            googleCalendarApiKey: 'AIzaSyB68ZmmL0y2y9zfgCicaVC8uBGMDwki2pca',
-			events: 'usa__en@holiday.calendar.google.com',
+            theme: true,
+            weekends: false,
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+
+            googleCalendarApiKey: 'AIzaSyB68ZmmL0y2y9zfgCicaVC8uBGMDwki2pc',
+            events: {
+                googleCalendarId: 'jo135s8fnku1ugoml22688q9d4@group.calendar.google.com',
+                backgroundColor: '#F2A900',
+                borderColor: '#9c4700',
+            },
+
+            //eventBackgroundColor: '#F2A900',
+            //eventBorderColor: '#9c4700',
 			
 			eventClick: function(event) {
 				// opens events in a popup window
@@ -56,23 +53,7 @@
 			loading: function(bool) {
 				$('#loading').toggle(bool);
             }
-//            eventBackgroundColor: '#F2A900',
-//            eventBorderColor: '#9c4700',
-//  
-// 	        eventClick: function(event) {
-//
-//                // opens events in a popup window
-//                window.open(event.url, 'gcalevent', 'width=400,height=400');
-//                return false;
-//            },
-//  
-//            loading: function(bool) {
-//                if (bool) {
-//                    $('#loading').show();
-//                }else{
-//                    $('#loading').hide();
-//                }
-//            } 
+
         }); 
     });
 </script>
