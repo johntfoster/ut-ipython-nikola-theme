@@ -20,47 +20,61 @@
 </article>
 
 {{ base.late_load_js() }}
-    <script>
+<script>
 
     $(document).ready(function() {
 
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
+//        var date = new Date();
+//        var d = date.getDate();
+//        var m = date.getMonth();
+//        var y = date.getFullYear();
   
         $('#calendar').fullCalendar({
 
-      theme: true,
-      weekends: false,
-      header: {
-         left: 'prev,next today',
-         center: 'title',
-         right: 'month,agendaWeek,agendaDay'
-     },
+//            theme: true,
+//            weekends: false,
+//            header: {
+//                left: 'prev,next today',
+//                center: 'title',
+//                right: 'month,agendaWeek,agendaDay'
+//            },
   
-        // THIS NEEDS TO BE https AND NOT JUST http!
-        events: 'https://www.google.com/calendar/feeds/jo135s8fnku1ugoml22688q9d4%40group.calendar.google.com/public/basic',
-        eventBackgroundColor: '#F2A900',
-        eventBorderColor: '#9c4700',
-  
- 	        eventClick: function(event) {
-
- 		    // opens events in a popup window
- 		    window.open(event.url, 'gcalevent', 'width=400,height=400');
- 		    return false;
- 		    },
-  
- 		    loading: function(bool) {
- 		        if (bool) {
- 			    $('#loading').show();
-  }else{
-  $('#loading').hide();
-  }
- 		    } 
-  }); 
+//            googleCalendarApiKey: 'AIzaSyB68ZmmL0y2y9zfgCicaVC8uBGMDwki2pca',
+//            events: {
+//                googleCalendarId: 'jo135s8fnku1ugoml22688q9d4@group.calendar.google.com'
+//            }
+            // US Holidays
+            googleCalendarApiKey: 'AIzaSyB68ZmmL0y2y9zfgCicaVC8uBGMDwki2pca',
+			events: 'usa__en@holiday.calendar.google.com',
+			
+			eventClick: function(event) {
+				// opens events in a popup window
+				window.open(event.url, 'gcalevent', 'width=700,height=600');
+				return false;
+			},
+			
+			loading: function(bool) {
+				$('#loading').toggle(bool);
+            }
+//            eventBackgroundColor: '#F2A900',
+//            eventBorderColor: '#9c4700',
+//  
+// 	        eventClick: function(event) {
+//
+//                // opens events in a popup window
+//                window.open(event.url, 'gcalevent', 'width=400,height=400');
+//                return false;
+//            },
+//  
+//            loading: function(bool) {
+//                if (bool) {
+//                    $('#loading').show();
+//                }else{
+//                    $('#loading').hide();
+//                }
+//            } 
+        }); 
     });
-
 </script>
     {% block extra_js %}{% endblock %}
     {% if annotations and post and not post.meta('noannotations') %}
